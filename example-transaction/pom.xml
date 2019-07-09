@@ -22,6 +22,10 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
     -->
+    <properties>
+        <java.version>1.8</java.version>
+
+    </properties>
 
     <dependencies>
         <dependency>
@@ -55,21 +59,67 @@
         </dependency>
 
 
-
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.restdocs</groupId>
+            <artifactId>spring-restdocs-mockmvc</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+
+
     </dependencies>
+
+
 
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+
+                <!--这个html文档没有成功生成，原因未知。我还专门单独安装了asciidoctor-->
+                <plugin>
+                    <groupId>org.asciidoctor</groupId>
+                    <artifactId>asciidoctor-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>generate-docs</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>process-asciidoc</goal>
+                            </goals>
+                            <configuration>
+                                <sourceDocumentName>index.adoc</sourceDocumentName>
+                                <backend>html</backend>
+                                <attributes>
+                                    <snippets>${project.build.directory}/snippets</snippets>
+                                </attributes>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+
+
+
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                 </plugin>
+
+
+
             </plugins>
         </pluginManagement>
     </build>
