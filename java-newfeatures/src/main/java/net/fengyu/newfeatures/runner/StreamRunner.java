@@ -17,6 +17,6 @@ public class StreamRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        streamService.parallelStream();
+        streamService.all();
     }
 }

@@ -49,22 +49,4 @@ public class Application
     }
 
 
-
-//    @Override
-//    public void run(String... args) throws Exception {
-//
-////这段代码打印spring加载的类
-////        ApplicationContext ctx = ApplicationContextUtils.getContext();
-////
-////        System.out.println("Let's inspect the beans provided by Spring Boot:");
-////
-////        String[] beanNames = ctx.getBeanDefinitionNames();
-////        Arrays.sort(beanNames);
-////        for (String beanName : beanNames) {
-////            System.out.println(beanName);
-////        }
-//
-//        System.out.println(helloService.sayHello("fengyu"));
-//        streamService.parallelStream();
-//    }
 }

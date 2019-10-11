@@ -1,20 +1,20 @@
 package net.fengyu.newfeatures.runner;
 
-
-import net.fengyu.newfeatures.service.HelloService;
+import net.fengyu.newfeatures.service.ForkJoinService;
 import org.springframework.boot.CommandLineRunner;
 
 import javax.annotation.Resource;
 
 //@Component
-//@Order(value=2)
-public class HelloRunner  implements CommandLineRunner {
+public class ForkJoinRunner implements CommandLineRunner {
 
     @Resource
-    private HelloService helloService;
+    private ForkJoinService forkJoinService;
+
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(helloService.sayHello("封宇"));
+        forkJoinService.run();
     }
+
 }

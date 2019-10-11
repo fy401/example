@@ -10,7 +10,12 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>example-transaction</module>
-      <module>java-newfeatures</module>
+    <module>java-newfeatures</module>
+    <module>myalgorithm</module>
+      <module>dubbo-server</module>
+    <module>dubbo-api</module>
+      <module>proxy</module>
+
   </modules>
 
   <name>example</name>

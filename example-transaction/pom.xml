@@ -84,8 +84,10 @@
 
 
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+     <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+
+
 
                 <!--这个html文档没有成功生成，原因未知。我还专门单独安装了asciidoctor-->
                 <plugin>
@@ -109,18 +111,12 @@
                     </executions>
                 </plugin>
 
-
-
-
-
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                 </plugin>
 
-
-
             </plugins>
-        </pluginManagement>
+
     </build>
 </project>
