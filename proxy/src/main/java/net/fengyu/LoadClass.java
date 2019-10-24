@@ -1,5 +1,6 @@
 package net.fengyu;
 
+
 import net.fengyu.util.MyClassLoader;
 
 import java.io.File;
@@ -13,7 +14,8 @@ public class LoadClass {
     public static void main( String[] args ) throws Exception {
         //读取本地的class文件内的字节码，转换成字节码数组
         File file = new File(".");
-        InputStream input = new FileInputStream(file.getCanonicalPath()+"/proxy/target/classes/net/fengyu/proxy/JavaDeveloper.class");
+//        InputStream input = new FileInputStream(file.getCanonicalPath()+"/proxy/target/classes/net/fengyu/proxy/JavaDeveloper.class");
+        InputStream input = new FileInputStream(file.getCanonicalPath()+"/ASMDeveloper.class");
         byte[] result = new byte[1024];
         int count = input.read(result);
         // 使用自定义的类加载器将 byte字节码数组转换为对应的class对象
@@ -32,6 +34,7 @@ public class LoadClass {
                 | NoSuchMethodException | SecurityException e) {
             e.printStackTrace();
         }
+
 
     }
 }

@@ -15,6 +15,7 @@
       <module>dubbo-server</module>
     <module>dubbo-api</module>
       <module>proxy</module>
+      <module>awesome</module>
 
   </modules>
 
