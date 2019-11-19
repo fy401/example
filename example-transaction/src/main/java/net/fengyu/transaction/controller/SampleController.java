@@ -2,6 +2,7 @@ package net.fengyu.transaction.controller;
 
 
 import net.fengyu.transaction.service.CustomerService;
+import net.fengyu.transaction.service.TrantestService;
 import net.fengyu.transaction.vo.Customer;
 import net.fengyu.transaction.vo.Quote;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class SampleController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private TrantestService trantestService;
 
     @RequestMapping("/hellocus")
     public Customer helloCustomer(@RequestParam(value="name", defaultValue="World") String name) {
@@ -53,6 +57,18 @@ public class SampleController {
     public String testTrans() {
         try {
             this.customerService.write2data();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+        return "success";
+    }
+
+    //XA事务测试
+    @RequestMapping("/xatrans")
+    public String xaTrans() {
+        try {
+            this.trantestService.insertTrantest();
         } catch (Exception e) {
             e.printStackTrace();
             return "error";

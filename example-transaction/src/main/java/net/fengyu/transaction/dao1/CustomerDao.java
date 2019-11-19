@@ -1,4 +1,4 @@
-package net.fengyu.transaction.dao;
+package net.fengyu.transaction.dao1;
 
 
 import net.fengyu.transaction.vo.Customer;
