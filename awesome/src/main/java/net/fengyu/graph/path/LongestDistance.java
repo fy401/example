@@ -2,18 +2,18 @@ package net.fengyu.graph.path;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.google.common.graph.EndpointPair;
 import com.google.common.graph.Graphs;
 import com.google.common.graph.MutableValueGraph;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 
 /**
  * 只支持不小于0的Double类型作为边（EdgeValue）的值
- * @param <N>
+ *
+ * @date 2019.11.19
+ * @author fengyu
+ * @param <N> 图节点的类型
  */
 public class LongestDistance<N> {
 
@@ -61,7 +61,7 @@ public class LongestDistance<N> {
         return this.graph;
     }
 
-
+    //计算初始节点到各个节点的最大距离
     public void calculate() {
 
         List<N> topologicalSortingList = Lists.newArrayList();
@@ -104,7 +104,6 @@ public class LongestDistance<N> {
                 }
             }
         }
-//        System.out.println(graph);
     }
 
     private void initPathFromSourceNode(N sourceNode) {
