@@ -16,6 +16,7 @@
     <module>dubbo-api</module>
       <module>proxy</module>
       <module>awesome</module>
+    <module>seed</module>
 
   </modules>
 
